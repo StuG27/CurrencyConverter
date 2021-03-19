@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Конвертер валюты</string>
+    <string name="reload_list">Потяните вниз, чтобы обновить</string>
+    <string name="rate">%1$d %2$s - %3$s RUB</string>
+    <string name="converter">Конвертер</string>
+    <string name="input_rub">Сколько у Вас рублей?</string>
+    <string name="get">Вы получите:</string>
+    <string name="search">Искать</string>
+</resources>
