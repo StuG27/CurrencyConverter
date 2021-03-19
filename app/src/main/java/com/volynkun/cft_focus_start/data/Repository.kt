@@ -55,10 +55,11 @@ object Repository {
     }
 
     fun searchJson(
+        isManual: Boolean,
         onComplete: (MutableList<Currency>) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        if (json == null) {
+        if ((json == null) || isManual) {
             download(onComplete, onError)
         } else {
             parse(json)
@@ -91,7 +92,8 @@ object Repository {
                 }
 
                 override fun onFailure(call: Call<String>, t: Throwable) {
-                    onError(t)
+                    parse(json)
+                    onComplete(currencies)
                 }
             }
         )

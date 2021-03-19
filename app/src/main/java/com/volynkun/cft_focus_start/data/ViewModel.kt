@@ -29,9 +29,10 @@ class ViewModel : ViewModel() {
         return Repository.getMyJson()
     }
 
-    fun search() {
+    fun search(isManual: Boolean) {
         isLoadingLiveData.postValue(true)
         repository.searchJson(
+            isManual,
             onComplete = { currencies ->
                 isLoadingLiveData.postValue(false)
                 listLiveData.postValue(currencies)

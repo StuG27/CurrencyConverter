@@ -115,10 +115,10 @@ class ListFragment : Fragment() {
     private fun bindViewModel() {
         viewModel.list.observe(viewLifecycleOwner) { currencyAdapter.items = it }
         viewModel.isLoading.observe(viewLifecycleOwner, ::updateLoadingState)
-        viewModel.search()
+        viewModel.search(false)
         binding.swipeRefresh.setColorSchemeColors(resources.getColor(R.color.orange_dark))
         binding.swipeRefresh.setOnRefreshListener {
-            viewModel.search()
+            viewModel.search(true)
         }
     }
 
